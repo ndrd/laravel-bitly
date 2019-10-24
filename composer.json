@@ -1,8 +1,8 @@
 {
-  "name": "shivella/laravel-bitly",
+  "name": "ndrd/lumen-bitly",
   "description": "Laravel package for generating bitly url",
   "keywords": ["laravel", "bitly", "package"],
-  "homepage": "https://github.com/Shivella/laravel-bitly",
+  "homepage": "https://github.com/ndrd/lumen-bitly",
   "license": "MIT",
   "authors": [
     {
