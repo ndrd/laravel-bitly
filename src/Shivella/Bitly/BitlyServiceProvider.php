@@ -39,6 +39,19 @@ class BitlyServiceProvider extends AppServiceProvider
      */
     public function boot()
     {
-        $this->publishes([__DIR__ . '/config/bitly.php' => config_path('bitly.php')]);
+          // Config file path.
+          $dist = __DIR__.'/../config/bitly.php';
+
+          // If we're installing in to a Lumen project, config_path
+          // won't exist so we can't auto-publish the config
+          if (function_exists('config_path')) {
+              // Publishes config File.
+              $this->publishes([
+                  $dist => config_path('bitly.php'),
+              ]);
+          }
+  
+          // Merge config.
+          $this->mergeConfigFrom($dist, 'bitly');
     }
 }
