@@ -9,13 +9,14 @@
 namespace Shivella\Bitly;
 
 use GuzzleHttp\Client;
-use Illuminate\Support\ServiceProvider as AppServiceProvider;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Config\Repository as Config;
 use Shivella\Bitly\Client\BitlyClient;
 
 /**
  * Class BitlyServiceProvider
  */
-class BitlyServiceProvider extends AppServiceProvider
+class BitlyServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -40,7 +41,7 @@ class BitlyServiceProvider extends AppServiceProvider
     public function boot()
     {
           // Config file path.
-          $dist = __DIR__.'/../config/bitly.php';
+          $dist = __DIR__.'/../../config/bitly.php';
 
           // If we're installing in to a Lumen project, config_path
           // won't exist so we can't auto-publish the config
