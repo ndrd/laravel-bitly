@@ -41,7 +41,7 @@ class BitlyServiceProvider extends ServiceProvider
     public function boot()
     {
           // Config file path.
-          $dist = __DIR__.'/../../config/bitly.php';
+          $dist = __DIR__.'/../../../config/bitly.php';
 
           // If we're installing in to a Lumen project, config_path
           // won't exist so we can't auto-publish the config
